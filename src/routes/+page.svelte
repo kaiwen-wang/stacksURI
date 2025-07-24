@@ -98,7 +98,11 @@
                     <div
                         class="w-full h-full bg-gray-200 flex items-center justify-center"
                     >
-                        <span class="text-6xl">{product.image}</span>
+                        <img
+                            src={product.image}
+                            alt={product.name}
+                            class="w-full h-full object-cover"
+                        />
                     </div>
                     <div class="absolute bottom-0 left-0 p-3">
                         <h3
@@ -119,4 +123,12 @@
 </div>
 
 <!-- Modal component -->
-<Modal isOpen={isModalOpen} onClose={closeModal} />
+<Modal
+    isOpen={isModalOpen}
+    onClose={closeModal}
+    title={selectedProduct?.name || ""}
+    description=""
+    price={selectedProduct?.price?.toString() || ""}
+    category={selectedProduct?.category || ""}
+    image={selectedProduct?.image || ""}
+/>
