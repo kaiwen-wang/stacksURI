@@ -1,4 +1,23 @@
 <script lang="ts">
+    import Modal from "$lib/Modal.svelte";
+
+    // Modal state
+    let isModalOpen = $state(false);
+    let selectedProduct: any = $state(null);
+
+    function openModal(product: any) {
+        console.log("Opening modal for product:", product);
+        selectedProduct = product;
+        isModalOpen = true;
+        document.body.classList.add("modal-open");
+    }
+
+    function closeModal() {
+        isModalOpen = false;
+        selectedProduct = null;
+        document.body.classList.remove("modal-open");
+    }
+
     // Sample product data with categories
     const products = [
         {
@@ -140,7 +159,11 @@
         <!-- Sample product cards -->
         {#each filteredProducts as product}
             <div
-                class="aspect-square border border-gray-300 relative hover:border-blue-500 transition-colors duration-200 hover:shadow-lg"
+                class="aspect-square border border-gray-300 relative hover:border-blue-500 transition-colors duration-200 hover:shadow-lg cursor-pointer"
+                onclick={() => openModal(product)}
+                role="button"
+                tabindex="0"
+                onkeydown={(e) => e.key === "Enter" && openModal(product)}
             >
                 <div
                     class="w-full h-full bg-gray-200 flex items-center justify-center"
@@ -158,3 +181,6 @@
         {/each}
     </div>
 </div>
+
+<!-- Modal component -->
+<Modal isOpen={isModalOpen} onClose={closeModal} />
