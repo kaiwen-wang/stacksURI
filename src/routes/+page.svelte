@@ -134,13 +134,11 @@
 </script>
 
 <div class="container mx-auto p-6">
-    <h1 class="text-3xl font-bold text-center mb-8">Product Grid</h1>
-
     <div
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-0"
     >
         <!-- Sample product cards -->
-        {#each filteredProducts as product, i}
+        {#each filteredProducts as product}
             <div
                 class="aspect-square border border-gray-300 relative hover:border-blue-500 transition-colors duration-200 hover:shadow-lg"
             >
