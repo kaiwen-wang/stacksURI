@@ -125,15 +125,13 @@
             </select>
         </div>
 
-        <!-- Filters -->
-        <div class="border-t border-gray-100 pt-6 mt-6">
+        <!-- <div class="border-t border-gray-100 pt-6 mt-6">
             <h3
                 class="text-xs font-light tracking-[0.2em] text-gray-500 mb-4 uppercase"
             >
                 Filters
             </h3>
 
-            <!-- Price Range -->
             <div class="mb-6">
                 <label
                     class="block text-xs font-light text-gray-600 mb-3 tracking-wide"
@@ -154,7 +152,6 @@
                 </div>
             </div>
 
-            <!-- Rating Filter -->
             <div class="mb-6">
                 <label
                     class="block text-xs font-light text-gray-600 mb-3 tracking-wide"
@@ -170,7 +167,6 @@
                 </div>
             </div>
 
-            <!-- Availability -->
             <div class="mb-4">
                 <label class="flex items-center group cursor-pointer">
                     <input type="checkbox" class="sr-only" />
@@ -183,7 +179,6 @@
                 </label>
             </div>
 
-            <!-- Free Shipping -->
             <div class="mb-6">
                 <label class="flex items-center group cursor-pointer">
                     <input type="checkbox" class="sr-only" />
@@ -197,13 +192,12 @@
             </div>
         </div>
 
-        <!-- Clear Filters -->
         <div class="border-t border-gray-100 pt-6 mt-2">
             <button
                 class="w-full py-2 text-xs font-light text-gray-500 hover:text-gray-700 tracking-wide transition-colors duration-200 uppercase"
             >
                 Clear All Filters
             </button>
-        </div>
+        </div> -->
     </div>
 </div>
