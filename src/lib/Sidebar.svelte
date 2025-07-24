@@ -59,7 +59,7 @@
         <h2
             class="text-xs font-light tracking-[0.2em] text-gray-500 mb-8 uppercase"
         >
-            Categories
+            Best items
         </h2>
 
         <!-- Categories -->
