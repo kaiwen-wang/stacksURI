@@ -46,15 +46,6 @@
     class="bg-white shadow-xl max-w-lg w-full h-[600px] p-0 border-0 z-50"
     style="z-index: 9999; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);"
 >
-    <!-- Close button -->
-    <button
-        class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-xl font-bold z-10"
-        onclick={onClose}
-        aria-label="Close modal"
-    >
-        ×
-    </button>
-
     <!-- Blank content area -->
     <div class="p-8 h-full flex items-center justify-center">
         <div class="text-center text-gray-400">
