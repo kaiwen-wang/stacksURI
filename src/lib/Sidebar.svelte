@@ -1,4 +1,6 @@
 <script lang="ts">
+    import { onMount } from "svelte";
+
     let { selectedCategory = $bindable("all") } = $props();
 
     const categories = [
@@ -22,6 +24,34 @@
     ];
 
     let selectedSort = $state("newest");
+
+    // Keyboard navigation for sidebar
+    function handleKeydown(event: KeyboardEvent) {
+        if (event.key === "ArrowUp" || event.key === "ArrowDown") {
+            event.preventDefault();
+            const currentIndex = categories.findIndex(
+                (cat) => cat.id === selectedCategory,
+            );
+            let newIndex;
+
+            if (event.key === "ArrowUp") {
+                newIndex =
+                    currentIndex > 0 ? currentIndex - 1 : categories.length - 1;
+            } else {
+                newIndex =
+                    currentIndex < categories.length - 1 ? currentIndex + 1 : 0;
+            }
+
+            selectedCategory = categories[newIndex].id;
+        }
+    }
+
+    onMount(() => {
+        window.addEventListener("keydown", handleKeydown);
+        return () => {
+            window.removeEventListener("keydown", handleKeydown);
+        };
+    });
 </script>
 
 <div class="w-64 bg-white border-r border-gray-200 h-screen overflow-y-auto">

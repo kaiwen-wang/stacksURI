@@ -1,4 +1,6 @@
 <script lang="ts">
+    import { onMount } from "svelte";
+
     let { selectedCategory, selectedSubcategory = $bindable("all") } = $props();
 
     // Define subcategories for each main category
@@ -77,6 +79,38 @@
         if (selectedCategory) {
             selectedSubcategory = "all";
         }
+    });
+
+    // Keyboard navigation for top bar
+    function handleKeydown(event: KeyboardEvent) {
+        if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+            event.preventDefault();
+            const currentIndex = currentSubcategories.findIndex(
+                (sub) => sub.id === selectedSubcategory,
+            );
+            let newIndex;
+
+            if (event.key === "ArrowLeft") {
+                newIndex =
+                    currentIndex > 0
+                        ? currentIndex - 1
+                        : currentSubcategories.length - 1;
+            } else {
+                newIndex =
+                    currentIndex < currentSubcategories.length - 1
+                        ? currentIndex + 1
+                        : 0;
+            }
+
+            selectedSubcategory = currentSubcategories[newIndex].id;
+        }
+    }
+
+    onMount(() => {
+        window.addEventListener("keydown", handleKeydown);
+        return () => {
+            window.removeEventListener("keydown", handleKeydown);
+        };
     });
 </script>
 
