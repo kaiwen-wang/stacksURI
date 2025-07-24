@@ -8,5 +8,13 @@ export default defineConfig({
 		tailwindcss(),
 		sveltekit(),
 		devtoolsJson()
-	]
+	],
+	server: {
+		fs: {
+			allow: ['..']
+		}
+	},
+	optimizeDeps: {
+		exclude: ['pocketbase']
+	}
 });
