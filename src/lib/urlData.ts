@@ -59,6 +59,20 @@ export function addProduct(products: Product[], newProduct: Omit<Product, 'id' |
     return [...products, product];
 }
 
+// Delete a product from the existing products array
+export function deleteProduct(products: Product[], productId: string): Product[] {
+    return products.filter(product => product.id !== productId);
+}
+
+// Update an existing product in the products array
+export function updateProduct(products: Product[], productId: string, updatedData: Partial<Omit<Product, 'id' | 'created'>>): Product[] {
+    return products.map(product =>
+        product.id === productId
+            ? { ...product, ...updatedData, updated: new Date().toISOString() }
+            : product
+    );
+}
+
 // Update URL with new products data
 export function updateUrlWithProducts(products: Product[]): void {
     const encodedData = encodeProductsToUrl(products);
