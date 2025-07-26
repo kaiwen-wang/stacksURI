@@ -12,82 +12,11 @@ export interface Product {
 
 // Default sample products with external image URLs
 export const defaultProducts: Product[] = [
-    // Electronics
     {
         id: "1",
-        name: "MacBook Pro M3",
+        name: "MacBook Pro 13'' (2020)",
         category: "electronics",
-        image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&h=400&fit=crop"
-    },
-    {
-        id: "2",
-        name: "iPad Pro",
-        category: "electronics",
-        image: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400&h=400&fit=crop"
-    },
-    {
-        id: "3",
-        name: "iPhone 15 Pro",
-        category: "electronics",
-        image: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400&h=400&fit=crop"
-    },
-    {
-        id: "4",
-        name: "Apple Watch Ultra",
-        category: "electronics",
-        image: "https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?w=400&h=400&fit=crop"
-    },
-
-    // Software
-    {
-        id: "5",
-        name: "VS Code",
-        category: "software",
-        image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=400&fit=crop"
-    },
-    {
-        id: "6",
-        name: "Figma",
-        category: "software",
-        image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=400&fit=crop"
-    },
-    {
-        id: "7",
-        name: "Obsidian",
-        category: "software",
-        image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&h=400&fit=crop"
-    },
-    {
-        id: "8",
-        name: "Alacritty Terminal",
-        category: "software",
-        image: "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=400&h=400&fit=crop"
-    },
-
-    // Clothing
-    {
-        id: "9",
-        name: "AER Duffel Bag",
-        category: "clothing",
-        image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop"
-    },
-    {
-        id: "10",
-        name: "Minimalist Backpack",
-        category: "clothing",
-        image: "https://images.unsplash.com/photo-1581605405669-fcdf81165afa?w=400&h=400&fit=crop"
-    },
-    {
-        id: "11",
-        name: "Quality T-Shirt",
-        category: "clothing",
-        image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop"
-    },
-    {
-        id: "12",
-        name: "Denim Jacket",
-        category: "clothing",
-        image: "https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?w=400&h=400&fit=crop"
+        image: "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=400&h=400&fit=crop"
     }
 ];
 
