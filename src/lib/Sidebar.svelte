@@ -1,25 +1,25 @@
 <script lang="ts">
     import { onMount } from "svelte";
 
-    let { selectedCategory = $bindable("all") } = $props();
+    let { selectedCategory = $bindable("all"), availableCategories = [] } =
+        $props<{
+            selectedCategory?: string;
+            availableCategories?: string[];
+        }>();
 
-    const categories = [
+    // Build categories array with "All Items" first, then dynamic categories
+    const categories = $derived([
         { id: "all", name: "All Items" },
-        { id: "electronics", name: "Electronics" },
-        { id: "clothing", name: "Clothing" },
-        { id: "books", name: "Books" },
-        { id: "home", name: "Home & Garden" },
-        { id: "sports", name: "Sports" },
-        { id: "toys", name: "Toys & Games" },
-        { id: "beauty", name: "Beauty" },
-        { id: "automotive", name: "Automotive" },
-    ];
+        ...availableCategories.map((cat: string) => ({
+            id: cat,
+            name: cat.charAt(0).toUpperCase() + cat.slice(1),
+        })),
+    ]);
 
     const sortOptions = [
         { id: "newest", name: "Newest First" },
         { id: "oldest", name: "Oldest First" },
-        { id: "price-low", name: "Price: Low to High" },
-        { id: "price-high", name: "Price: High to Low" },
+        { id: "alphabetical", name: "Alphabetical" },
         { id: "popular", name: "Most Popular" },
     ];
 
